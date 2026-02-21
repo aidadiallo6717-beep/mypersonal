@@ -1,0 +1,383 @@
+/**
+ * GHOST-OS - Pages d'authentification
+ * Version: 3.0.0
+ */
+
+/* ============================================ */
+/* CONTENEUR AUTH
+/* ============================================ */
+
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--primary), transparent);
+    animation: rotate 20s linear infinite;
+    opacity: 0.1;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--surface);
+    border-radius: 24px;
+    padding: 40px;
+    border: 1px solid var(--primary);
+    box-shadow: var(--shadow-xl), var(--glow-primary);
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+/* ============================================ */
+/* EN-TÊTE AUTH
+/* ============================================ */
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.auth-logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.auth-logo .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.auth-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.auth-subtitle {
+    color: var(--text-dim);
+}
+
+/* ============================================ */
+/* FORMULAIRE AUTH
+/* ============================================ */
+
+.auth-form {
+    margin-bottom: 24px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form .form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.auth-form .form-label i {
+    color: var(--primary);
+}
+
+.auth-form .form-input {
+    background: var(--surface-light);
+    border: 1px solid rgba(0,255,136,0.2);
+    color: var(--text);
+    padding: 14px 16px;
+    border-radius: 8px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.auth-form .form-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,255,136,0.1);
+    outline: none;
+}
+
+.auth-form .form-input::placeholder {
+    color: var(--text-dark);
+}
+
+/* ============================================ */
+/* OPTIONS AUTH
+/* ============================================ */
+
+.auth-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.auth-remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dim);
+}
+
+.auth-remember input {
+    accent-color: var(--primary);
+}
+
+.auth-forgot {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.auth-forgot:hover {
+    text-shadow: var(--glow-text);
+}
+
+/* ============================================ */
+/* BOUTON AUTH
+/* ============================================ */
+
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: 8px;
+    color: var(--background);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+auth-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.auth-button:hover {
+    box-shadow: var(--glow-primary);
+}
+
+/* ============================================ */
+/* SÉPARATEUR
+/* ============================================ */
+
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 30px);
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+}
+
+.auth-divider::before {
+    left: 0;
+}
+
+.auth-divider::after {
+    right: 0;
+}
+
+.auth-divider span {
+    background: var(--surface);
+    padding: 0 16px;
+    color: var(--text-dim);
+    font-size: 0.875rem;
+}
+
+/* ============================================ */
+/* BOUTONS SOCIAUX
+/* ============================================ */
+
+.auth-social {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.auth-social-btn {
+    flex: 1;
+    padding: 12px;
+    background: var(--surface-light);
+    border: 1px solid rgba(0,255,136,0.2);
+    border-radius: 8px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.auth-social-btn:hover {
+    background: var(--primary);
+    color: var(--background);
+    border-color: var(--primary);
+}
+
+.auth-social-btn i {
+    font-size: 1.125rem;
+}
+
+/* ============================================ */
+/* PIED DE PAGE AUTH
+/* ============================================ */
+
+.auth-footer {
+    text-align: center;
+    color: var(--text-dim);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.auth-footer a:hover {
+    text-shadow: var(--glow-text);
+}
+
+/* ============================================ */
+/* CODE DE PARRAINAGE
+/* ============================================ */
+
+.referral-code {
+    background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,102,255,0.1));
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 24px;
+    text-align: center;
+    border: 1px solid var(--primary);
+}
+
+.referral-code-label {
+    color: var(--text-dim);
+    font-size: 0.875rem;
+    margin-bottom: 8px;
+}
+
+.referral-code-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: 2px;
+}
+
+.referral-code-copy {
+    margin-top: 8px;
+    padding: 8px;
+    background: var(--surface-light);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.referral-code-copy:hover {
+    background: var(--primary);
+    color: var(--background);
+}
+
+/* ============================================ */
+/* ANIMATIONS SPÉCIFIQUES
+/* ============================================ */
+
+@keyframes slideInAuth {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-card {
+    animation: slideInAuth 0.5s ease;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: var(--glow-primary);
+    }
+    50% {
+        box-shadow: 0 0 30px var(--primary);
+    }
+}
+
+.auth-card {
+    animation: pulseGlow 3s ease infinite;
+}
+
+/* ============================================ */
+/* VERSIONS RESPONSIVE
+/* ============================================ */
+
+@media screen and (max-width: 480px) {
+    .auth-card {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .auth-logo {
+        font-size: 2rem;
+    }
+    
+    .auth-title {
+        font-size: 1.25rem;
+    }
+    
+    .auth-social {
+        flex-direction: column;
+    }
+    
+    .auth-options {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
