@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/animations.css">
+    <link rel="stylesheet" href="/assets/css/hacker-theme.css">
+    <!-- Ajoute les autres CSS selon la page -->
+</head>
+<body>
+    <!-- Ton contenu -->
+</body>
+</html>
 <?php
 /**
  * Dashboard administrateur
