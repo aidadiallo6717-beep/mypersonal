@@ -1,0 +1,308 @@
+/**
+ * GHOST-OS - Animations
+ * Version: 3.0.0
+ */
+
+/* ============================================ */
+/* ANIMATIONS DE BASE
+/* ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--primary);
+    }
+    50% {
+        box-shadow: 0 0 30px var(--primary);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================ */
+/* CLASSES D'ANIMATION
+/* ============================================ */
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.5s ease;
+}
+
+.animate-slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+.animate-slide-out {
+    animation: slideOut 0.5s ease;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.5s ease;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.5s ease;
+}
+
+.animate-scale {
+    animation: scaleIn 0.3s ease;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s ease infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease infinite;
+}
+
+.animate-float {
+    animation: float 3s ease infinite;
+}
+
+.animate-rotate {
+    animation: rotate 10s linear infinite;
+}
+
+/* ============================================ */
+/* ANIMATIONS DE CHARGEMENT
+/* ============================================ */
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, var(--surface) 25%, var(--surface-light) 50%, var(--surface) 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+/* ============================================ */
+/* ANIMATIONS DE TYPING
+/* ============================================ */
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--primary);
+    width: 0;
+    animation: typing 2s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* ============================================ */
+/* ANIMATIONS DE SCANNER
+/* ============================================ */
+
+@keyframes scan {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    opacity: 0.5;
+    animation: scan 2s linear infinite;
+    pointer-events: none;
+}
+
+/* ============================================ */
+/* ANIMATIONS DE RÉSEAU
+/* ============================================ */
+
+@keyframes network-pulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.network-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: network-pulse 2s ease infinite;
+}
+
+.network-dot:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.network-dot:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* ============================================ */
+/* ANIMATIONS DE CARTE
+/* ============================================ */
+
+@keyframes card-glitch {
+    0%, 100% {
+        clip-path: inset(0 0 0 0);
+    }
+    10% {
+        clip-path: inset(10% 0 30% 0);
+    }
+    20% {
+        clip-path: inset(30% 0 10% 0);
+    }
+    30% {
+        clip-path: inset(50% 0 0 0);
+    }
+    40% {
+        clip-path: inset(0 0 50% 0);
+    }
+    50% {
+        clip-path: inset(20% 0 20% 0);
+    }
+}
+
+.card:hover .card-glitch {
+    animation: card-glitch 0.5s ease;
+}
